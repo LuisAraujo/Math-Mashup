@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Bauhaus93";
-  src: url("../assets/fonts/bauhs93.ttf") format("truetype")
+  src: url("https://luisaraujo.github.io/Math-Mashup/assets/fonts/bauhs93.ttf") format("truetype")
+  /*src: url("../assets/fonts/bauhs93.ttf") format("truetype")*/
 }
 
 html, body{
