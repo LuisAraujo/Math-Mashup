@@ -37,7 +37,7 @@ se.gameReady = function () {
 		new Sprite("logo", wfull*0.15, 100, wfull*0.7, wfull*0.7);	
 		new Text("point", wfull*0.3, wfull*0.7+150, "#1A6099", 60, "Bauhaus93" );
 		new Text("200", wfull*0.3 - 10, wfull*0.7+310, "#1A6099", 200, "Bauhaus93" );
-		new Button( [ new Animation("bt-play"), new Animation("bt-play-hover")] ,  wfull*0.35, wfull*0.7 + 400, 
+		new MButton( [ new Animation("bt-play"), new Animation("bt-play-hover")] ,  wfull*0.35, wfull*0.7 + 400, 
 		function(){
 			this.setAnimationByIndex(1);	
 			setTimeout( function(){
@@ -82,7 +82,7 @@ se.gameReady = function () {
 			
 			posx = wfull * 0.05 + (wfull*0.2 + 20) * col;
 			posy = hfull * 0.15 + (wfull*0.2 + 20) * line;
-			new Button(anim, posx, posy,  
+			new MButton(anim, posx, posy,  
 		
 			function(){
 				this.setAnimationByIndex(1);	
@@ -135,13 +135,13 @@ se.gameReady = function () {
 	
 		new Rect(0, 0, hfull*0.13, wfull, "#3688D8");
 		
-		new Button("bt-menu", 20, 20, function(){
+		new MButton("bt-menu", 20, 20, function(){
 			se.mlevel.loadScene(1);
 		},
 		wfull*0.15, wfull*0.15);	
 		
 		
-		new Button("bt-next", wfull * 0.85 - 20,20,  function(){
+		new MButton("bt-next", wfull * 0.85 - 20,20,  function(){
 			
 		},
 		wfull*0.15, wfull*0.15);	
@@ -164,7 +164,7 @@ se.gameReady = function () {
 			posx = wfull * 0.05 + (wfull*0.17 + 15) * col;
 			posy = hfull * 0.65 + (wfull*0.15 + 5) * line;
 			
-			new Button("level-1", posx, posy,  
+			new MButton("level-1", posx, posy,  
 		
 			function(){
 				this.setAnimationByIndex(1);	
@@ -182,7 +182,7 @@ se.gameReady = function () {
 			col++;
 		}
 		
-		new Button("bt-clear", wfull*0.05 , hfull*0.85,  
+		new MButton("bt-clear", wfull*0.05 , hfull*0.85,  
 
 		function(){
 			this.setAnimationByIndex(1);	
@@ -193,7 +193,7 @@ se.gameReady = function () {
 		}, wfull*0.2, wfull*0.2);
 		
 		
-		new Button("bt-result", wfull*0.25 + 5  , hfull*0.85 ,  
+		new MButton("bt-result", wfull*0.25 + 5  , hfull*0.85 ,  
 
 		function(){
 			this.setAnimationByIndex(1);	
@@ -216,5 +216,15 @@ function getStatusLevel(index){
 	arr = [true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,false, false, false,false];
 	
 	return arr[index];
+	
+}
+
+
+function showItens(){
+	
+	json = [{'name':'melon', 'value':'1'}, {'name':'melon', 'value':'0.5'}];
+	
+	
+	
 	
 }
