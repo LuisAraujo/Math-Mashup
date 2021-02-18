@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Bauhaus93";
+  src: url("../assets/fonts/BAUHS93.ttf") format("truetype")
+}
+
+html, body{
+    background-color: #fff;
+	height: 100%;
+	width:100%;
+	overflow: hide;
+}
+
+canvas{
+    background-color: #fff;
+    margin-left: calc(50% - 600px);
+    margin-top: 20px;
+}
+
+.mobile-canvas{
+	 margin: 0px !important;
+	 padding: 0px !important;
+	 position: fixed;
+	 top: 0;
+	 left: 0;
+}
+
+#nameplayer{
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    position: fixed;
+    top: 400px;
+    left: calc(50% - 100px);
+    color:#fff;
+    font-size: 20px;
+    text-align: center;
+}
+
+#nameplayer:focus{
+    outline: none;
+}
