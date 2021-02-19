@@ -1171,6 +1171,17 @@ Scene.prototype.removeObjectByTag = function (tag) {
 
 
 
+/**
+ * Remove um o objeto do level através da tag
+ * @method
+ */
+Scene.prototype.removeAllObjects = function () {
+   
+   this.objects = [];
+	
+}
+
+
 
 
 /**
