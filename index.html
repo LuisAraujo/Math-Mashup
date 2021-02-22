@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <title>Math Mushap</title>
-	<meta name="viewport" content="user-scalable=no">
-	<link rel="manifest" href="manifest.json">
+	<meta name="viewport" content="initial-scale=1,user-scalable-no, width=device-width" />
+
 	<meta name="mobile-web-app-capable" content="yes">
     <meta name="description" content="A puzzle math game." />
     <meta name="author" content="Luis Araujo" />
@@ -20,11 +20,21 @@
     
     <script src="scripts/mygame.js"></script>
 
+	<script>
+	
+		onDeviceReady = function(){
+	
+		}
+		
+		start = function(){
+			se.fnready();
+			 document.addEventListener("deviceready", onDeviceReady, false);
+		}
+	</script>
 
   </head>
-  <body>
-
+  <body onload="start()">
 	<img src="resource/starterlogo.png" style="display: none" id="logohtml" />
-
+	
   </body>
 </html>

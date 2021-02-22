@@ -57,7 +57,7 @@ Animation.prototype.verifySprites = function (sprites) {
             var sprite_temp =  se.loader.getAssets(sprites[i]) ;
 
             if((!sprite_temp instanceof Image) || (sprite_temp == null)){
-                throw new Error("Ocorreu um erro ao carregar a imagem" + sprite_temp + ". Verifique o nome adicionado aos resources");
+                throw new Error("Ocorreu um erro ao carregar a imagem" + sprite_temp + ". Verifique o nome adicionado aos resources ("+ sprites[i] + ")");
             }else{
                 this.sprites.push(sprite_temp);
             }
@@ -66,7 +66,7 @@ Animation.prototype.verifySprites = function (sprites) {
     } else if(typeof sprites == "string"){
 			var sprite_temp =  se.loader.getAssets(sprites) ;
             if((!sprite_temp instanceof Image) || (sprite_temp == null)){
-                throw new Error("Ocorreu um erro ao carregar a imagem" + sprite_temp + ". Verifique o nome adicionado aos resources");
+                throw new Error("Ocorreu um erro ao carregar a imagem" + sprite_temp + ". Verifique o nome adicionado aos resources ("+ sprites + ")");
             }else{
                 this.sprites.push(sprite_temp);
             }
@@ -4642,9 +4642,9 @@ StarterEngine = function (w,h) {
 	/**@global */
 	canvas = null;
 	
-    window.onload = function(){
-        
-	
+    //window.onload = function(){
+     this.fnready = function(){  
+		
 		canvas = document.createElement("canvas");
 		canvas.id = "gamecanvas";
 		//canvas.style="background: #fff";
@@ -4679,6 +4679,8 @@ StarterEngine = function (w,h) {
     
 	}.bind(this);
 
+
+
 	/**@global */
     red = {r:255,b:0,g:0};
 	/**@global */
@@ -4703,6 +4705,7 @@ StarterEngine = function (w,h) {
 	this.pause = false;
 	this.pause_adjust = true;
 	this.landscape = true;
+
 
 
 };

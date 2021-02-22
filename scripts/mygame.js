@@ -1,145 +1,154 @@
-const se = new StarterEngine(0,0);
+//function start(){
+	
+	
+	se = new StarterEngine(0,0);
+	se.setAsMobile(true);
+	se.landscape = false;
 
-se.setAsMobile(true);
-se.landscape = false;
+	se.setAsMobile(true);
+	se.landscape = false;
 
-se.setResources = function () {
+	se.setResources = function () {
+			
+	  //menu
+	  this.loader.addResource('logo', 'gui/logo.png', 'image');
+	  this.loader.addResource('bt-play', 'button/bt-play.png', 'image');
+	  this.loader.addResource('bt-play-hover', 'button/bt-play-hover.png', 'image');
+	  
+	  this.loader.addResource('level-1', 'button/level-1.png', 'image');
+	  this.loader.addResource('level-1-hover', 'button/level-1-hover.png', 'image');
+	   this.loader.addResource('level-2', 'button/level-2.png', 'image');
+	  this.loader.addResource('level-2-hover', 'button/level-2-hover.png', 'image');
+	  
+	  this.loader.addResource('level-disable', 'button/level-disable.png', 'image');
+	  this.loader.addResource('level-disable-hover', 'button/bt-level-disable-hover.png', 'image');
+	  
+	  this.loader.addResource('bt-next-levels', 'button/bt-next-levels.png', 'image');
+	  this.loader.addResource('bt-next-levels-hover', 'button/bt-next-levels-hover.png', 'image');
+	  this.loader.addResource('bt-prior-levels', 'button/bt-prior-levels.png', 'image');
+	  this.loader.addResource('bt-prior-levels-hover', 'button/bt-prior-levels-hover.png', 'image');
+	  
+	  this.loader.addResource('bt-menu', 'button/bt-menu.png', 'image');
+	  this.loader.addResource('bt-next', 'button/bt-next.png', 'image');
+	  
+	  this.loader.addResource('bt-clear', 'button/bt-clear.png', 'image');
+	  this.loader.addResource('bt-clear-hover', 'button/bt-clear-hover.png', 'image');
+	  
+	  this.loader.addResource('bt-result', 'button/bt-result.png', 'image');
+	  this.loader.addResource('bt-result-hover', 'button/bt-result-hover.png', 'image');
+	  
+	  this.loader.addResource('bt-reload', 'button/bt-reload.png', 'image');
+	  this.loader.addResource('bt-reload-hover', 'button/bt-reload-hover.png', 'image');
+	 
+	  this.loader.addResource('bt-next-level', 'button/bt-next-level.png', 'image');
+	  this.loader.addResource('bt-next-level-hover', 'button/bt-next-level-hover.png', 'image');
+	  
+	  this.loader.addResource('bt-erase', 'button/bt-erase.png', 'image');
+	  
+	  this.loader.addResource('console', 'gui/console.png', 'image');
+	  this.loader.addResource('bg-clock', 'gui/bg-clock.png', 'image');
+	  this.loader.addResource('bg-clock-2', 'gui/bg-clock-2.png', 'image');
+	  
+	  
+	  this.loader.addResource('colock-1', 'gui/colock-1.png', 'image');
+	  this.loader.addResource('colock-2', 'gui/colock-2.png', 'image');
+	  this.loader.addResource('colock-3', 'gui/colock-3.png', 'image');
+	  this.loader.addResource('colock-4', 'gui/colock-4.png', 'image');
+	  this.loader.addResource('colock-5', 'gui/colock-5.png', 'image');
+	  this.loader.addResource('colock-6', 'gui/colock-6.png', 'image');
+	  
+	  this.loader.addResource('less10', 'gui/less10.png', 'image');
+	  
+	  this.loader.addResource('banana', 'itens/banana.png', 'image');
+	  this.loader.addResource('banana2', 'itens/banana2.png', 'image');
+	  this.loader.addResource('banana3', 'itens/banana3.png', 'image');
+	  
+		this.loader.addResource('melon', 'itens/melon.png', 'image');
+		this.loader.addResource('melon2', 'itens/melon2.png', 'image');
 		
-  //menu
-  this.loader.addResource('logo', 'gui/logo.png', 'image');
-  this.loader.addResource('bt-play', 'button/bt-play.png', 'image');
-  this.loader.addResource('bt-play-hover', 'button/bt-play-hover.png', 'image');
-  
-  this.loader.addResource('level-1', 'button/level-1.png', 'image');
-  this.loader.addResource('level-1-hover', 'button/level-1-hover.png', 'image');
-   this.loader.addResource('level-2', 'button/level-2.png', 'image');
-  this.loader.addResource('level-2-hover', 'button/level-2-hover.png', 'image');
-  
-  this.loader.addResource('level-disable', 'button/level-disable.png', 'image');
-  this.loader.addResource('level-disable-hover', 'button/bt-level-disable-hover.png', 'image');
-  
-  this.loader.addResource('bt-next-levels', 'button/bt-next-levels.png', 'image');
-  this.loader.addResource('bt-next-levels-hover', 'button/bt-next-levels-hover.png', 'image');
-  this.loader.addResource('bt-prior-levels', 'button/bt-prior-levels.png', 'image');
-  this.loader.addResource('bt-prior-levels-hover', 'button/bt-prior-levels-hover.png', 'image');
-  
-  this.loader.addResource('bt-menu', 'button/bt-menu.png', 'image');
-  this.loader.addResource('bt-next', 'button/bt-next.png', 'image');
-  
-  this.loader.addResource('bt-clear', 'button/bt-clear.png', 'image');
-  this.loader.addResource('bt-clear-hover', 'button/bt-clear-hover.png', 'image');
-  
-  this.loader.addResource('bt-result', 'button/bt-result.png', 'image');
-  this.loader.addResource('bt-result-hover', 'button/bt-result-hover.png', 'image');
-  
-  this.loader.addResource('bt-reload', 'button/bt-reload.png', 'image');
-  this.loader.addResource('bt-reload-hover', 'button/bt-reload-hover.png', 'image');
- 
-  this.loader.addResource('bt-next-level', 'button/bt-next-level.png', 'image');
-  this.loader.addResource('bt-next-level-hover', 'button/bt-next-level-hover.png', 'image');
-  
-  this.loader.addResource('bt-erase', 'button/bt-erase.png', 'image');
-  
-  this.loader.addResource('console', 'gui/console.png', 'image');
-  this.loader.addResource('bg-clock', 'gui/bg-clock.png', 'image');
-  this.loader.addResource('bg-clock-2', 'gui/bg-clock-2.png', 'image');
-  
-  
-  this.loader.addResource('colock-1', 'gui/colock-1.png', 'image');
-  this.loader.addResource('colock-2', 'gui/colock-2.png', 'image');
-  this.loader.addResource('colock-3', 'gui/colock-3.png', 'image');
-  this.loader.addResource('colock-4', 'gui/colock-4.png', 'image');
-  this.loader.addResource('colock-5', 'gui/colock-5.png', 'image');
-  this.loader.addResource('colock-6', 'gui/colock-6.png', 'image');
-  
-  this.loader.addResource('less10', 'gui/less10.png', 'image');
-  
-  this.loader.addResource('banana', 'itens/banana.png', 'image');
-  this.loader.addResource('banana2', 'itens/banana2.png', 'image');
-  this.loader.addResource('banana3', 'itens/banana3.png', 'image');
-  
-    this.loader.addResource('melon', 'itens/melon.png', 'image');
-    this.loader.addResource('melon2', 'itens/melon2.png', 'image');
-	
-	
-    this.loader.addResource('div', 'op/div.png', 'image');
-    this.loader.addResource('sub', 'op/sub.png', 'image');
-    this.loader.addResource('add', 'op/add.png', 'image');
-    this.loader.addResource('mult', 'op/mult.png', 'image');
-    this.loader.addResource('equal', 'op/equal.png', 'image');
-    this.loader.addResource('quest', 'op/quest.png', 'image');
-	
-	
-	
-}
+		
+		this.loader.addResource('div', 'op/div.png', 'image');
+		this.loader.addResource('sub', 'op/sub.png', 'image');
+		this.loader.addResource('add', 'op/add.png', 'image');
+		this.loader.addResource('mult', 'op/mult.png', 'image');
+		this.loader.addResource('equal', 'op/equal.png', 'image');
+		this.loader.addResource('quest', 'op/quest.png', 'image');
+
+	}
 
 
-se.gameReady = function () {
-	
-	if ( db.getItem("MathM_totalpoint") == null )
-	   db.setNewItem("MathM_totalpoint", 0);
-	
-	totalpoints = 0 ;
-	currentChallenge = 1;
-	
-	
-	initialNumberLevel = 1;
-	wfull = window.innerWidth;
-	hfull = window.innerHeight;
-	var startmenu = new Scene(undefined, true);
-	
-	startmenu.setFunctionStart( function () {
+	se.gameReady = function () {
+		
 		if ( db.getItem("MathM_totalpoint") == null )
-			db.setNewItem("MathM_totalpoint", 0);
+		   db.setNewItem("MathM_totalpoint", 0);
 		
-		totalpoints = parseInt( db.getItem("MathM_totalpoint") ) ;
+		totalpoints = 0 ;
+		currentChallenge = 1;
 		
-		new Rect(0, 0, hfull, wfull, "#3688D8");
 		
-		new MButton("bt-erase", 10, hfull - 70, function(){
+		initialNumberLevel = 1;
+		wfull = window.innerWidth;
+		hfull = window.innerHeight;
+		var startmenu = new Scene(undefined, true);
+		
+		startmenu.setFunctionStart( function () {
+			if ( db.getItem("MathM_totalpoint") == null )
+				db.setNewItem("MathM_totalpoint", 0);
 			
-			db.clearAllItems();
-			se.mlevel.loadScene(0);
+			totalpoints = parseInt( db.getItem("MathM_totalpoint") ) ;
 			
-		}, 60, 70 );
+			new Rect(0, 0, hfull, wfull, "#3688D8");
+			
+			new MButton("bt-erase", 10, hfull - 70, function(){
+				
+				db.clearAllItems();
+				se.mlevel.loadScene(0);
+				
+			}, 60, 70 );
+			
+			
+			new Sprite("logo", wfull*0.15, hfull*0.1, wfull*0.7, wfull*0.7);	
+			
+			
+			
+			new MButton( [ new Animation("bt-play"), new Animation("bt-play-hover")] ,  wfull*0.35, hfull*0.5, 
+			function(){
+				this.setAnimationByIndex(1);	
+				setTimeout( function(){
+					se.mlevel.loadScene(1
+					);
+				},200);
+			}, wfull*0.3, wfull*0.3);
+			
+			
+			
+			new Text(totalpoints, wfull*0.4, hfull*0.8 + 10, "#1A6099", hfull*0.2, "Bauhaus93" );
+			
+		});
 		
-		
-		new Sprite("logo", wfull*0.15, 100, wfull*0.7, wfull*0.7);	
-		new Text("point", wfull*0.3, wfull*0.7+150, "#1A6099", 60, "Bauhaus93" );
-		new Text(totalpoints, wfull*0.3 - 10, wfull*0.7+310, "#1A6099", 200, "Bauhaus93" );
-		new MButton( [ new Animation("bt-play"), new Animation("bt-play-hover")] ,  wfull*0.35, wfull*0.7 + 400, 
-		function(){
-			this.setAnimationByIndex(1);	
-			setTimeout( function(){
-				se.mlevel.loadScene(1
-				);
-			},200);
-		}, wfull*0.3, wfull*0.3);
-		
-	});
-	
-	var menulevels = new Scene(undefined, true);
-	menulevels.setFunctionStart( menufunction );
+		var menulevels = new Scene(undefined, true);
+		menulevels.setFunctionStart( menufunction );
 
-	var gameplay = new Scene(undefined, true);
-	
-	gameplay.setFunctionStart( function () {
-	
-		loadLevel();
+		var gameplay = new Scene(undefined, true);
 		
-	});
-	
-	
+		gameplay.setFunctionStart( function () {
+		
+			loadLevel();
+			
+		});
 
-	se.mlevel.loadScene(0);
-}
+
+		se.mlevel.loadScene(0);
+	}
+
+//}
 
 
 function menufunction () {
 	
 		se.mlevel.getCurrentScene().removeAllObjects();
 		new Rect(0, 0, hfull*0.1, wfull, "#3688D8");
-		txt = new Text("levels", wfull*0.5, 100, "#fff", 100, "Bauhaus93");
+		txt = new Text("levels", wfull*0.5, hfull*0.07, "#fff", hfull*0.1, "Bauhaus93");
 		txt.toCenter();
 		line = 0;
 		col = 0;
@@ -173,8 +182,8 @@ function menufunction () {
 				fcolor = "#636566";
 			}
 			
-			posx = wfull * 0.05 + (wfull*0.2 + 20) * col;
-			posy = hfull * 0.15 + (wfull*0.2 + 20) * line;
+			posx = wfull * 0.02 + (wfull*0.2 + 15) * col;
+			posy = hfull * 0.15 + (wfull*0.2 + 15) * line;
 			new MButton(anim, posx, posy,  
 		
 			function(){
@@ -187,9 +196,9 @@ function menufunction () {
 			}, wfull*0.2, wfull*0.2);
 		
 			if( (i + initialNumberLevel) <=  99)
-				txt = new Text( i + initialNumberLevel , posx+ wfull*0.1, posy + wfull*0.15, fcolor , 150, "Bauhaus93");
+				txt = new Text( i + initialNumberLevel , posx+ wfull*0.1, posy + wfull*0.15, fcolor , hfull*0.08, "Bauhaus93");
 			else 
-			txt = new Text( i + initialNumberLevel , posx+ wfull*0.1, posy + wfull*0.12, 	fcolor , 100, "Bauhaus93");
+			txt = new Text( i + initialNumberLevel , posx+ wfull*0.1, posy + wfull*0.12, 	fcolor , hfull*0.05, "Bauhaus93");
 			
 			txt.toCenter();
 			
@@ -204,7 +213,7 @@ function menufunction () {
 		
 		if( initialNumberLevel > 1){
 			anim = [ new Animation("bt-prior-levels"), new Animation("bt-prior-levels-hover")];
-			new Button(anim, 30 , posy,  
+			new Button(anim, wfull * 0.1 , posy,  
 
 			function(){
 				this.setAnimationByIndex(1);	
@@ -220,7 +229,7 @@ function menufunction () {
 		
 		if( initialNumberLevel < 81){
 			anim = [ new Animation("bt-next-levels"), new Animation("bt-next-levels-hover")];
-			new Button(anim, wfull * 0.05 + (wfull*0.2 + 20) * 3, posy,  
+			new Button(anim, wfull * 0.7, posy,  
 
 			function(){
 				this.setAnimationByIndex(1);	
@@ -313,7 +322,7 @@ function printTime(onlyprint){
 		sp.setTag("gui-time");
 	}
 	
-	var txt = new Text(currenttime<10? "0" + currenttime: currenttime , wfull * 0.4 + 100, hfull*0.05 + 130, fcolor, 100, "Bauhaus93");
+	var txt = new Text(currenttime<10? "0" + currenttime: currenttime , wfull * 0.5, hfull*0.13, fcolor, hfull*0.08, "Bauhaus93");
 	txt.toCenter();
 	txt.setTag("gui-time");
 	
@@ -380,7 +389,7 @@ function setWin(){
 	wfull*0.15, wfull*0.15);	
 	
 	sp = new Sprite("bg-clock", wfull * 0.3, hfull*0.3 , wfull * 0.4, wfull * 0.4);
-	var txt = new Text( currenttime , wfull * 0.3 + 200 , hfull*0.3 + 270, "#FFF" , 250, "Bauhaus93");
+	var txt = new Text( currenttime , wfull * 0.5 , hfull*0.47 , "#DD143B" , hfull*0.15, "Bauhaus93");
 	txt.toCenter();
 	
 	new MButton("bt-next-level", wfull*0.25, hfull*0.6, 
@@ -419,7 +428,7 @@ function setEnd(){
 	wfull*0.15, wfull*0.15);	
 	
 	sp = new Sprite("bg-clock-2", wfull * 0.3, hfull*0.3 , wfull * 0.4, wfull * 0.4);
-	var txt = new Text("00" , wfull * 0.3 + 200 , hfull*0.3 + 270, "#DD143B" , 250, "Bauhaus93");
+	var txt = new Text("00" , wfull * 0.5 , hfull*0.47 , "#DD143B" , hfull*0.15, "Bauhaus93");
 	txt.toCenter();
 	
 	new MButton("bt-reload", wfull*0.25, hfull*0.6, 
@@ -443,7 +452,7 @@ function printChallage(){
 					new Sprite(currentlevel[i][j] , wfull * 0.05  + (wfull * 0.12 + 5) * j  , hfull * 0.2 + (wfull * 0.12 + 10) * i, wfull * 0.12, wfull * 0.12 );
 				
 				}else{					
-					new Text( currentlevel[i][j].toString() ,  wfull * 0.05  + (wfull * 0.12 + 5) * j ,hfull * 0.2 + 100 + (wfull * 0.12 + 10) * i, "#000" , 100, "Bauhaus93");
+					new Text( currentlevel[i][j].toString() ,  wfull * 0.05  + (wfull * 0.12 + 5) * j ,hfull * 0.26  + (hfull * 0.08 ) * i, "#000" , hfull*0.07, "Bauhaus93");
 				}
 			}
 			
@@ -452,7 +461,7 @@ function printChallage(){
 
 function printConsole(){
 		value = "";
-		txt = new Text("", wfull * 0.05 + 20, hfull * 0.55 + 125,  "#222", 150, "Bauhaus93");
+		txt = new Text("", wfull * 0.05 + 10, hfull * 0.6 ,  "#222", hfull*0.1, "Bauhaus93");
 		txt.setUpdateFunction(function(){
 			this.text = value;
 		});
@@ -470,7 +479,7 @@ function printKeyboard(){
 				col = 0;
 				line++;
 			}
-			posx = wfull * 0.05 + (wfull*0.17 + 15) * col;
+			posx = wfull * 0.05 + (wfull*0.17 + 5) * col;
 			posy = hfull * 0.65 + (wfull*0.15 + 5) * line;
 			
 			new MButton("level-1", posx, posy,  
@@ -478,7 +487,7 @@ function printKeyboard(){
 			function(){
 				this.setAnimationByIndex(1);	
 				setTimeout( function(){
-					if(value.length < 10)
+					if(value.length < 5)
 						value += i;
 				}, 200);
 			
@@ -486,7 +495,7 @@ function printKeyboard(){
 			
 			fcolor = "#fff"
 		
-			txt = new Text( (i).toString() , posx + wfull*0.075, posy + wfull*0.12, fcolor , 130, "Bauhaus93");
+			txt = new Text( (i).toString() , posx + wfull*0.075, posy + wfull*0.12, fcolor , hfull*0.07, "Bauhaus93");
 			txt.toCenter();
 			
 			col++;
