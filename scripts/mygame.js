@@ -2,12 +2,10 @@
 	
 	
 	se = new StarterEngine(0,0);
-	se.setAsMobile(true);
-	se.landscape = false;
+	//se.setAsMobile(true);
+	//se.landscape = false;
 
-	se.setAsMobile(true);
-	se.landscape = false;
-
+	
 	se.setResources = function () {
 			
 	  //menu
