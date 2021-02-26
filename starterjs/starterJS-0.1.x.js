@@ -4594,6 +4594,8 @@ Mobile.prototype.adjustSizeScreen = function(){
 		canvas.height =  window.innerHeight;
 	}
 	
+	alert(canvas.width , canvas.height);
+	
 	canvas.classList.add("mobile-canvas");
 		
 	/* Get the documentElement (<html>) to display the page in fullscreen 
@@ -4644,6 +4646,7 @@ StarterEngine = function (w,h) {
 	
     //window.onload = function(){
      this.fnready = function(){  
+		
 		
 		canvas = document.createElement("canvas");
 		canvas.id = "gamecanvas";
@@ -4749,8 +4752,8 @@ StarterEngine.prototype.startGame =function () {
  */
 StarterEngine.prototype.loopgame = function (ctx) {
 
-	//is landscape?
-	if((mobile.isMobile()) && (this.landscape) && ( (mobile.getOrientation() == 0 ) || (mobile.getOrientation() == 180 ))){
+	/*is landscape?
+	if((mobile.isMobile()) && (this.landscape) && ( (mobile.getOrientation() == 0 ) || (mobile.getOrientation() == 180 )) ){
 		
 		this.pause_adjust = true;
 			
@@ -4760,16 +4763,16 @@ StarterEngine.prototype.loopgame = function (ctx) {
 		if(mobile.isMobile())
 			mobile.adjustSizeScreen();
 		
-	}
+	}*/
 	
 	
-	if ((!this.pause_adjust) &&  (!this.pause)){
+	//if ((!this.pause_adjust) &&  (!this.pause)){
 		
 		this.mlevel.getCurrentScene().updateFunction();
 		//chama o print do manager level
 		this.mlevel.print(ctx);
 		//requestframe
-	}
+	//}
 	
 	
 	if( this.mlevel.getCurrentScene().istutorial )
