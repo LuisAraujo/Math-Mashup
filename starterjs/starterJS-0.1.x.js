@@ -4594,7 +4594,6 @@ Mobile.prototype.adjustSizeScreen = function(){
 		canvas.height =  window.innerHeight;
 	}
 	
-	alert(canvas.width , canvas.height);
 	
 	canvas.classList.add("mobile-canvas");
 		
